@@ -1,91 +1,127 @@
-body{
+/* ===== RESET ===== */
+* {
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    color:#333;
-    background:#ffffff;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-header{
-    background:#1f2937;
+/* ===== BODY ===== */
+body {
+    background:#f5f5f5;
+    color:#333;
+}
+
+/* ===== HEADER ===== */
+header {
+    background:#1e3a8a;
     color:white;
     padding:20px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
-header h1{
-    font-size:22px;
+header h1 {
+    font-size:24px;
 }
-header nav a{
+header nav a {
     color:white;
     text-decoration:none;
     margin-left:20px;
-    font-size:15px;
+    font-weight:bold;
+}
+header nav a:hover{
+    text-decoration:underline;
 }
 
-/* HERO */
-.hero{
-    padding:80px 40px;
-    background:#f3f4f6;
-}
-.hero h2{
-    font-size:36px;
-    margin-bottom:15px;
-}
-.hero p{
-    max-width:600px;
-    font-size:16px;
-}
-.hero button{
-    margin-top:20px;
-    padding:10px 25px;
-    background:#2563eb;
+/* ===== HERO ===== */
+.hero {
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+               url('https://picsum.photos/1200/600?electric') center/cover no-repeat;
     color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+.hero h2 { font-size:40px; margin-bottom:15px; }
+.hero p { font-size:18px; max-width:700px; margin:auto; }
+.hero button {
+    margin-top:20px;
+    padding:12px 30px;
     border:none;
+    background:#facc15;
+    color:#333;
+    font-weight:bold;
     cursor:pointer;
 }
-
-/* SECTIONS */
-section{
-    padding:60px 40px;
+.hero button:hover{
+    background:#eab308;
 }
-.services{
+
+/* ===== SERVICES ===== */
+section {
+    padding:60px 40px;
+    text-align:center;
+}
+.services {
     display:flex;
+    justify-content:center;
     gap:30px;
     flex-wrap:wrap;
 }
-.service{
+.service {
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
     flex:1;
-    min-width:220px;
+    min-width:250px;
 }
-.service h3{
+.service h3 {
     margin-bottom:10px;
 }
 
-/* CONTACT */
-.contact{
-    background:#f9fafb;
+/* ===== ABOUT ===== */
+.about p {
+    max-width:700px;
+    margin:auto;
+    font-size:16px;
 }
-input, textarea{
+
+/* ===== CONTACT ===== */
+.contact {
+    background:#f3f4f6;
+}
+input, textarea {
     width:100%;
     padding:10px;
     margin-top:10px;
     border:1px solid #ccc;
+    border-radius:5px;
 }
-.contact button{
+.contact button {
     margin-top:15px;
-    padding:10px;
-    background:#1f2937;
+    padding:12px;
+    background:#1e3a8a;
     color:white;
     border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+.contact button:hover{
+    background:#0f286f;
 }
 
-/* FOOTER */
-footer{
-    background:#1f2937;
+/* ===== FOOTER ===== */
+footer {
+    background:#1e3a8a;
     color:white;
     text-align:center;
-    padding:15px;
+    padding:20px;
     font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    header { flex-direction:column; gap:10px; }
+    .services { flex-direction:column; }
 }
