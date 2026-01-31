@@ -3,100 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Entreprise | Accueil</title>
-
-<style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    color:#333;
-    background:#ffffff;
-}
-
-/* ===== HEADER ===== */
-header{
-    background:#1f2937;
-    color:white;
-    padding:20px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-header h1{
-    font-size:22px;
-}
-header nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:15px;
-}
-
-/* ===== HERO ===== */
-.hero{
-    padding:80px 40px;
-    background:#f3f4f6;
-}
-.hero h2{
-    font-size:36px;
-    margin-bottom:15px;
-}
-.hero p{
-    max-width:600px;
-    font-size:16px;
-}
-.hero button{
-    margin-top:20px;
-    padding:10px 25px;
-    background:#2563eb;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-
-/* ===== SECTIONS ===== */
-section{
-    padding:60px 40px;
-}
-.services{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-}
-.service{
-    flex:1;
-    min-width:220px;
-}
-.service h3{
-    margin-bottom:10px;
-}
-
-/* ===== CONTACT ===== */
-.contact{
-    background:#f9fafb;
-}
-input, textarea{
-    width:100%;
-    padding:10px;
-    margin-top:10px;
-    border:1px solid #ccc;
-}
-.contact button{
-    margin-top:15px;
-    padding:10px;
-    background:#1f2937;
-    color:white;
-    border:none;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:#1f2937;
-    color:white;
-    text-align:center;
-    padding:15px;
-    font-size:14px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -117,11 +24,11 @@ footer{
         Nous accompagnons les entreprises dans leur développement
         grâce à des solutions simples, fiables et efficaces.
     </p>
-    <button onclick="contact()">Nous contacter</button>
+    <button onclick="goContact()">Nous contacter</button>
 </div>
 
 <section id="services">
-    <h2>Nos services</h2><br>
+    <h2>Nos services</h2>
     <div class="services">
         <div class="service">
             <h3>Conseil</h3>
@@ -139,7 +46,7 @@ footer{
 </section>
 
 <section id="about">
-    <h2>À propos</h2><br>
+    <h2>À propos</h2>
     <p>
         Notre entreprise met l’accent sur la qualité,
         la transparence et la satisfaction de nos clients.
@@ -148,11 +55,11 @@ footer{
 
 <section class="contact" id="contact">
     <h2>Contact</h2>
-    <form onsubmit="send(event)">
+    <form id="contactForm">
         <input type="text" placeholder="Nom" required>
         <input type="email" placeholder="Email" required>
         <textarea placeholder="Message" required></textarea>
-        <button>Envoyer</button>
+        <button type="submit">Envoyer</button>
     </form>
 </section>
 
@@ -160,16 +67,6 @@ footer{
     © 2026 Nom de l’Entreprise — Tous droits réservés
 </footer>
 
-<script>
-function contact(){
-    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-}
-
-function send(e){
-    e.preventDefault();
-    alert("Merci, votre message a été envoyé.");
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
