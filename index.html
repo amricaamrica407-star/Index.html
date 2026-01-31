@@ -2,14 +2,134 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Entreprise | Accueil</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Génie Électrique</title>
 
+<style>
+/* ===== RESET ===== */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background:#f5f5f5;
+    color:#333;
+}
+
+/* ===== HEADER ===== */
+header {
+    background:#1e3a8a;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header h1 {
+    font-size:24px;
+}
+header nav a {
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+               url('https://picsum.photos/1200/600?electric') center/cover no-repeat;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+.hero h2 { font-size:40px; margin-bottom:15px; }
+.hero p { font-size:18px; max-width:700px; margin:auto; }
+.hero button {
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    background:#facc15;
+    color:#333;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ===== SERVICES ===== */
+section {
+    padding:60px 40px;
+    text-align:center;
+}
+.services {
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+.service {
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    flex:1;
+    min-width:250px;
+}
+.service h3 {
+    margin-bottom:10px;
+}
+
+/* ===== ABOUT ===== */
+.about p {
+    max-width:700px;
+    margin:auto;
+    font-size:16px;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    background:#f3f4f6;
+}
+input, textarea {
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+.contact button {
+    margin-top:15px;
+    padding:12px;
+    background:#1e3a8a;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    header { flex-direction:column; gap:10px; }
+    .services { flex-direction:column; }
+}
+</style>
+
+</head>
 <body>
 
 <header>
-    <h1>Nom de l’Entreprise</h1>
+    <h1>Génie Électrique</h1>
     <nav>
         <a href="#home">Accueil</a>
         <a href="#services">Services</a>
@@ -19,37 +139,34 @@
 </header>
 
 <div class="hero" id="home">
-    <h2>Solutions professionnelles pour votre entreprise</h2>
-    <p>
-        Nous accompagnons les entreprises dans leur développement
-        grâce à des solutions simples, fiables et efficaces.
-    </p>
-    <button onclick="goContact()">Nous contacter</button>
+    <h2>Solutions Électriques Modernes et Fiables</h2>
+    <p>Nous fournissons des services de génie électrique pour entreprises et particuliers avec expertise et sécurité.</p>
+    <button onclick="scrollToContact()">Contactez-nous</button>
 </div>
 
 <section id="services">
-    <h2>Nos services</h2>
+    <h2>Nos Services</h2>
     <div class="services">
         <div class="service">
-            <h3>Conseil</h3>
-            <p>Analyse et accompagnement stratégique.</p>
+            <h3>Installation Électrique</h3>
+            <p>Conception et installation d’installations électriques sécurisées.</p>
         </div>
         <div class="service">
-            <h3>Développement</h3>
-            <p>Solutions digitales adaptées à vos besoins.</p>
+            <h3>Maintenance</h3>
+            <p>Suivi et maintenance préventive des systèmes électriques.</p>
         </div>
         <div class="service">
-            <h3>Support</h3>
-            <p>Assistance et suivi professionnel.</p>
+            <h3>Énergie Renouvelable</h3>
+            <p>Solutions solaires et éoliennes pour particuliers et entreprises.</p>
         </div>
     </div>
 </section>
 
-<section id="about">
+<section class="about" id="about">
     <h2>À propos</h2>
     <p>
-        Notre entreprise met l’accent sur la qualité,
-        la transparence et la satisfaction de nos clients.
+        Notre équipe d’ingénieurs électriques est spécialisée dans les installations industrielles et résidentielles,
+        garantissant sécurité, fiabilité et innovation.
     </p>
 </section>
 
@@ -64,9 +181,19 @@
 </section>
 
 <footer>
-    © 2026 Nom de l’Entreprise — Tous droits réservés
+    © 2026 Génie Électrique — Tous droits réservés
 </footer>
 
-<script src="script.js"></script>
+<script>
+function scrollToContact(){
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Merci ! Votre message a été envoyé.');
+});
+</script>
+
 </body>
 </html>
