@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Génie Électrique</title>
-<link rel="stylesheet" href="style.css"> <!-- ربط CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,31 +12,56 @@
     <nav>
         <a href="#home">Accueil</a>
         <a href="#services">Services</a>
+        <a href="#projects">Projets</a>
         <a href="#about">À propos</a>
         <a href="#contact">Contact</a>
+        <a href="https://wa.me/212XXXXXXXXX" target="_blank">WhatsApp</a>
     </nav>
 </header>
 
 <div class="hero" id="home">
-    <h2>Solutions Électriques Modernes et Fiables</h2>
-    <p>Nous fournissons des services de génie électrique pour entreprises et particuliers avec expertise et sécurité.</p>
-    <button onclick="scrollToContact()">Contactez-nous</button>
+    <video autoplay muted loop class="hero-video">
+        <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h2 class="fade-in">Solutions Électriques Modernes et Fiables</h2>
+        <p class="fade-in">Nous fournissons des services de génie électrique pour entreprises et particuliers avec expertise et sécurité.</p>
+        <button onclick="scrollToContact()" class="fade-in">Contactez-nous</button>
+    </div>
 </div>
 
 <section id="services">
     <h2>Nos Services</h2>
     <div class="services">
-        <div class="service">
+        <div class="service fade-up">
             <h3>Installation Électrique</h3>
             <p>Conception et installation d’installations électriques sécurisées.</p>
         </div>
-        <div class="service">
+        <div class="service fade-up">
             <h3>Maintenance</h3>
             <p>Suivi et maintenance préventive des systèmes électriques.</p>
         </div>
-        <div class="service">
+        <div class="service fade-up">
             <h3>Énergie Renouvelable</h3>
             <p>Solutions solaires et éoliennes pour particuliers et entreprises.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projets Réalisés</h2>
+    <div class="projects-carousel">
+        <div class="project" onclick="openLightbox(this)">
+            <img src="assets/project1.jpg" alt="Projet 1">
+            <h4>Installation Industrielle</h4>
+        </div>
+        <div class="project" onclick="openLightbox(this)">
+            <img src="assets/project2.jpg" alt="Projet 2">
+            <h4>Énergie Solaire</h4>
+        </div>
+        <div class="project" onclick="openLightbox(this)">
+            <img src="assets/project3.jpg" alt="Projet 3">
+            <h4>Maintenance Résidentielle</h4>
         </div>
     </div>
 </section>
@@ -63,6 +88,10 @@
     © 2026 Génie Électrique — Tous droits réservés
 </footer>
 
-<script src="script.js"></script> <!-- ربط JS -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
